@@ -2,7 +2,10 @@ module github.com/Xori71/TuiTag
 
 go 1.27.0
 
-require charm.land/bubbletea/v2 v2.0.9
+require (
+	charm.land/bubbletea/v2 v2.0.9
+	github.com/pelletier/go-toml/v2 v2.4.3
+)
 
 require (
 	github.com/charmbracelet/colorprofile v0.4.3 // indirect
