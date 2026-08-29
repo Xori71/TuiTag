@@ -5,6 +5,7 @@ go 1.27.0
 require (
 	charm.land/bubbles/v2 v2.2.1
 	charm.land/bubbletea/v2 v2.0.9
+	github.com/pelletier/go-toml/v2 v2.4.3
 )
 
 require (
