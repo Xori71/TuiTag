@@ -10,18 +10,26 @@ type Model struct {
 	index      int
 }
 
-func initModel() (Model, error) {
-	// Open current working directory
-	currentDir, err := os.Getwd()
+func New(savedDir string) (Model, error) {
+	var currentDir string
+	var err error
+	if savedDir == "" {
+		currentDir, err = os.Getwd()
+	} else {
+		currentDir = savedDir
+	}
 	if err != nil {
 		return Model{}, err
 	}
 
 	entries, err := os.ReadDir(currentDir)
+	if err != nil {
+		return Model{}, nil
+	}
 
 	return Model{
 		currentDir: currentDir,
 		fileList:   entries,
 		index:      0,
-	}, err
+	}, nil
 }
